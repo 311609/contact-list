@@ -1,8 +1,8 @@
 const Nombre = document.querySelector('.Nombre')
-const Apellido = document.querySelector('Apellido')
+const Apellido = document.querySelector('.Apellido')
 const Numero = document.querySelector('.Numero')
 const Ciudad = document.querySelector('.Ciudad')
-const Direccion = document.querySelector('Direccion')
+const Direccion = document.querySelector('.Direccion')
 const btnAgregarContacto = document.querySelector('.btn-agregar-contacto')
 
 const listadoContactos = document.querySelector('.listado-contactos')

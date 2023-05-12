@@ -1,14 +1,14 @@
-const guardarContacto = (db, contacto) =>{
+function guardarContacto(db, contacto) {
     db.setItem(contacto.id, JSON.stringify(contacto))
-    window.location.href = '/'
+    window.location.reload(true)
 
 }
 
 const cargarContactos = (db, parentNode) =>{
     let claves = Object.keys(db)
 
-    for(clave of claves){
-        let contacto = JSON.parse(db.getItem(clave))
+    for(claves of claves){
+        let contacto = JSON.parse(db.getItem(claves))
         crearContacto(parentNode, contacto, db)
         
     }
@@ -24,12 +24,12 @@ const crearContacto = (parentNode, contacto, db) =>{
     let direccionContacto = document.createElement('p')
     let iconoBorrar = document.createElement('span')
 
-    nombreContacto.innerHTML = contacto.Nombre
-    apellidoContacto.innerHTML = contacto.Apellido
-    numeroContacto.innerHTML = contacto.Numero
-    ciudadContacto.innerHTML = contacto.ciudad
-    direccionContacto.innerHTML = contacto.Direccion
-    iconoBorrar.innerHTML = 'delete'
+    nombreContacto.innerText = contacto.Nombre
+    apellidoContacto.innerText = contacto.Apellido
+    numeroContacto.innerText = contacto.Numero
+    ciudadContacto.innerText = contacto.Ciudad
+    direccionContacto.innerText = contacto.Direccion
+    iconoBorrar.innerText = 'delete'
 
     divContacto.classList.add('contacto')
     iconoBorrar.classList.add('material-icons', 'icono')
@@ -41,6 +41,7 @@ const crearContacto = (parentNode, contacto, db) =>{
 
     divContacto.appendChild(nombreContacto)
     divContacto.appendChild(apellidoContacto)
+    divContacto.appendChild(numeroContacto)
     divContacto.appendChild(ciudadContacto)
     divContacto.appendChild(direccionContacto)
     divContacto.appendChild(iconoBorrar)
